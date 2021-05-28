@@ -2,6 +2,7 @@ const players = ["X", "O"]
 const BOXES = document.querySelectorAll('.basebox')
 let currentPlayer = players[Math.floor(Math.random() * players.length)]
 const turnIndicator = document.querySelector('.player')
+const resetBoard = document.querySelector('button')
 
 let WINNER = ''
 
@@ -18,6 +19,8 @@ function mainGameLoop() {
            if(WINNER) {
               WINNER = switchPlayer(currentPlayer)
                turnIndicator.textContent = "Winner is " + WINNER 
+               document.body.style.backgroundColor = 'white'
+               document.body.style.color = 'black'
            }
         })
     })
@@ -34,8 +37,12 @@ function clickHandler(currentPlayer, e) {
     if(currentPlayer == "X") turnIndicator.textContent = switchPlayer(currentPlayer) + ' Turn'
     if(currentPlayer == "O") turnIndicator.textContent = switchPlayer(currentPlayer) + ' Turn'
     e.classList.add('filled')
-    e.style.backgroundColor = 'rgba(65, 105, 225, 0.7)'
+    e.style.backgroundColor = 'rgba(255, 0, 0, 0.7);'
     WINNER = checkForWinner(BOXES, currentPlayer)
+}
+
+function resettheBoard() {
+  window.location.reload()
 }
 
 function checkForWinner(board, currentPlayer) {
@@ -80,3 +87,7 @@ function checkForWinner(board, currentPlayer) {
 }
 
 mainGameLoop()
+
+resetBoard.addEventListener('click', () => {
+    resettheBoard()
+})

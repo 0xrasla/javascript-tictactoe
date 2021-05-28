@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
 body {
     background-color: black;
     color: white;
@@ -18,19 +20,38 @@ body {
     justify-content: center;
     align-items: center;
     border: 1px solid white;
-    background-color: royalblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    font-family: 'Squada One';
     font-weight: 500;
     color: white;
     font-size: 90px;
 }
 
 #box:hover {
-    background-color: rgba(65, 105, 225, 0.7);
+    background-color: rgb(46, 43, 43);
+    background-image: url('./img/1200px-Skull-Icon.svg.png');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
 }
 
 .gameboard {
     width: 456px;
     display: flex;
     flex-wrap: wrap;
+}
+
+button {
+    padding: 15px;
+    margin-top: 30px;
+    color: white;
+    font-family: 'Squada One';
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
 }
